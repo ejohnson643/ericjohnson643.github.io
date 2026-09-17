@@ -1,0 +1,22 @@
+---
+const { frontmatter } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{frontmatter.title} | Eric Johnson</title>
+    <meta name="description" content={frontmatter.description} />
+  </head>
+  <body>
+    <nav><a href="/">Eric Johnson</a></nav>
+    <main><slot /></main>
+  </body>
+</html>
+<style is:global>
+  body { max-width: 760px; margin: 3rem auto; padding: 0 1.25rem;
+    font: 18px/1.65 system-ui; color: #16263c; }
+  a { color: #087c83; }
+  img { max-width: 100%; height: auto; }
+</style>
